@@ -1,0 +1,8 @@
+title: "klutzy.github.io"
+index_url: "http://klutzy.github.io"
+author: klutzy
+
+static_path: "/static"
+permalink: pretty
+
+markdown: redcarpet

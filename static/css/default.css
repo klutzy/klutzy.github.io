@@ -1,0 +1,64 @@
+body {
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+body > h1 {
+    border-bottom: 2px solid #d9cead;
+    margin-top: 10px;
+}
+
+header h1, header p, header div {
+    display: inline;
+}
+
+footer {
+    font-size: 14px;
+    color: #555;
+    border-top: 2px solid #d9cead;
+    padding-top: 2px;
+}
+
+article img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article h1 {
+    font-size: 20px;
+}
+
+article h2 {
+    font-size: 16px;
+}
+
+article {
+    margin-top: 10px;
+}
+
+article header h1 {
+    font-size: 24px;
+}
+
+
+li {
+    margin-top: 5px;
+}
+
+a[rel="alternate"] {
+    color: #FF9F00;
+}
+
+a[rel="alternate"]::before {
+    color: #FF9F00;
+    content: '■ ';
+}
+
+a[rel~="help"]::before {
+    content: '※ ';
+}
