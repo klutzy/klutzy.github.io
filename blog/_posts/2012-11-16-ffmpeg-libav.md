@@ -1,7 +1,7 @@
 ---
 layout: default
 date: 2012-11-16
-mod_date: 2013-01-25
+mod_date: 2014-09-16
 title: FFmpeg-libav 분쟁 기록
 tags: history foss ffmpeg libav
 ---
@@ -78,18 +78,24 @@ FFmpeg의 트레이드마크는 Fabrice가 가지고 있지만
 libav에서 제공하는 이름은 avconv이니까 아예 말이 안 되는 것도 아니지만..
 (이후 [수정되었다고는 합니다](https://bugs.launchpad.net/ubuntu/+source/libav/+bug/939863).)
 
-# 현재
+# Fork 그 이후
 
-현재 상황은 그리 변하지 않았습니다.
-FFmpeg와 libav는 각자 개발을 계속하고 있고,
-사용자 입장에서는 둘 중 무엇이 나은지 선택하기가 쉽지 않습니다.
-그저 배포판에서 기본으로 쓰는 걸 쓸 수밖에요.
+(2014-09-16 추가)
 
-* 현재 우분투는 여전히 libav를 기본으로 사용하고 있고,
-ffmpeg를 쓰고 싶다면 [ppa](https://launchpad.net/~jon-severinsson/+archive/ffmpeg)를 등록해야 합니다.
-* 젠투 상황을 찾아보니 최근 흥미로운 토론이 있네요.
-  [ffmpeg에서 libav로 기본 코덱을 바꾸려는](http://blogs.gentoo.org/scarabeus/2013/01/15/libav-going-to-be-default-provider-for-your-codec-experience/) 토론이 있습니다.
-  [follow-up 1](http://aballier.wordpress.com/2013/01/18/ffmpeg-vs-libav-a-distribution-maintainer-point-of-view-almost-two-years-after-the-split/),
-  [follow-up 2](http://blogs.gentoo.org/lu_zero/2013/01/18/the-case-of-defaults-libav-vs-ffmpeg/).
+Libav가 갈라져 나온 이후에도 양쪽은 여전히 살아있습니다.
+Libav는 여전히 FFmpeg 패치를 무시하고 단독적인 진행을 하는 모양이고,
+FFmpeg는 여전히 Libav 패치를 자주 머지해가면서 자체 개발 역시 진행하고 있고요.
+Libav는 FFmpeg의 "업스트림"이 되는 데에는 성공했지만
+그렇다고 FFmpeg의 사용층을 완전히 흡수하지는 못한 어정쩡한 상태인 것이죠.
+
+[최근 들어서는 데비안에서 FFmpeg를 되살리고 있습니다][lwn-reconsidering-ffmpeg-debian]!
+이미 experimental에 [ffmpeg 패키지][debian-packages-experimental-ffmpeg]가 추가되어 있는 상태고요.
+[이유](http://lwn.net/Articles/607594/)는 FFmpeg가 Libav에 비해
+[여전히 기능이 많다는 점][ffmpeg-libav-diff],
+그리고 둘 사이의 호환성 문제가 계속 나타난다는 점입니다.
+결국 패키지 관리 입장에서는 둘 다 제공해야 하는 것이겠죠.
 
 [git-videolan-patch]: http://patches.libav.org/patch/497/
+[lwn-reconsidering-ffmpeg-debian]: http://lwn.net/Articles/607591/
+[debian-packages-experimental-ffmpeg]: https://packages.debian.org/experimental/ffmpeg
+[ffmpeg-libav-diff]: http://lucy.pkh.me/diff/
